@@ -1,13 +1,21 @@
 #!/bin/bash
+#k.kochemasov
 
 regex="([0-9]{1,3}[\.]){3}[0-9]{1,3}"
 
-if [ -z "$1" ]
+if [[ "$1" =~ "-reset" ]]
 then
+	ipmitool user set name 2 ADMIN
+	ipmitool user set password 2 •••••••••
+	echo "NEW Login:Password — ADMIN:•••••••••"
+	shift
+fi
+if [ -z "$1" ]; then
 	read -p "Input FQDN or IP-address: " input
 else
-	input=$1
+		input=$1
 fi
+
 if [[ "$input" =~ $regex ]]
 then
 	ip=$input
