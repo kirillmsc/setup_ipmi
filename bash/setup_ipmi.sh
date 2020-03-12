@@ -1,4 +1,4 @@
-#k.kochemasov@corp.mail.ru
+#!/bin/bash
 
 regex="([0-9]{1,3}[\.]){3}[0-9]{1,3}"
 
@@ -49,9 +49,9 @@ fi
 echo "IPMI IP:		"$ip
 echo "NETMASK:		"$netm
 echo "DEFAULT GATEWAY:	"$defg
-# ipmitool lan set 1 ipsrc static
-# ipmitool lan set 1 ipaddr $ip
-# ipmitool lan set 1 netmask $netm
-# ipmitool lan set 1 defgw ipaddr $defg
-# killall discover
-# discover
+ipmitool lan set 1 ipsrc static
+ipmitool lan set 1 ipaddr $ip
+ipmitool lan set 1 netmask $netm
+ipmitool lan set 1 defgw ipaddr $defg
+killall discover
+discover
