@@ -2,7 +2,7 @@
 
 regex="([0-9]{1,3}[\.]){3}[0-9]{1,3}"
 
-if [[ "$1" =~ "-reset" ]]
+if [[ "$1" =~ "--reset" ]]
 then
 	ipmitool user set name 2 ADMIN
 	ipmitool user set password 2 •••••••••
