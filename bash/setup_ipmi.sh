@@ -30,14 +30,6 @@ else
 		if [[ "$ip" =~ $regex ]]
 		then
 			echo -e "\nAddress of $hostname".ipmi" found!\n"
-		else
-			ip=$(host $hostname".inband.icq.com" 2>&1 | head -n 1 | awk '{print $NF}')
-			if [[ "$ip" =~ $regex ]]
-			then
-				echo -e "\nAddress of $hostname".inband.icq.com" found!\n"
-			else
-			echo "Error! Run script with IP"; exit 1
-			fi
 		fi
 	fi
 fi
