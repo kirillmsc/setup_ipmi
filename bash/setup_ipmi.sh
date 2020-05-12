@@ -52,5 +52,4 @@ ipmitool lan set 1 ipsrc static
 ipmitool lan set 1 ipaddr $ip
 ipmitool lan set 1 netmask $netm
 ipmitool lan set 1 defgw ipaddr $defg
-killall discover
-discover
+reboot
